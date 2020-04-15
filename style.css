@@ -1,0 +1,17 @@
+.bt-wrap {
+	margin: 20px auto;
+	width: 385px;
+}
+
+.bt-github-logo {
+	float: left;
+}
+
+.bt-header {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.bt-logo {
+	max-width: 150px;
+}
