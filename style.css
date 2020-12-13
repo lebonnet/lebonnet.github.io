@@ -1,17 +1,15 @@
 .bt-wrap {
 	margin: 20px auto;
-	width: 385px;
+	width: 450px;
+	font-family: 'Roboto', Verdana, sans-serif;
 }
 
 .bt-github-logo {
-	float: left;
+	margin-left: auto;
 }
 
 .bt-header {
 	margin-bottom: 20px;
-	text-align: center;
-}
-
-.bt-logo {
-	max-width: 150px;
+	display: flex;
+	align-items: center;
 }
