@@ -16,12 +16,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-<!--    <link rel="manifest" href="./favicon/manifest.json">-->
+    <!--    <link rel="manifest" href="./favicon/manifest.json">-->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link href="main.css?v=2.2.5" rel="stylesheet">
-    <link href="style.css?v=2.2.5" rel="stylesheet">
+    <link href="main.css?v=2.3.1" rel="stylesheet">
+    <link href="style.css?v=2.3.1" rel="stylesheet">
 </head>
 <body>
 <div class="bt-wrap">
@@ -42,15 +42,111 @@
             </svg>
         </a>
     </div>
-    <h3>with header, resize cols</h3>
+    <h3>simple, no header</h3>
+    <pre>
+new BomTable({
+    tableClass: 'ex-tbl',
+    container: '.example1',
+    stickyHeader: false,
+    data:
+        [
+            ['Kia Rio', 96689, 87662, '+10%'],
+            ['Лада Гранта', 93686, 87726, '+7%'],
+            ['Лада Веста', 77291, 55174, '+40%'],
+            ['Hyundai Solaris', 68614, 90380, '–24%'],
+            ['Hyundai Creta', 55305, 21929, '—'],
+        ],
+});
+    </pre>
     <div class="example1"></div>
+    <h3>with header, resizable cols</h3>
+    <pre>
+new BomTable({
+    tableClass: 'ex-tbl',
+    container: '.example2',
+    colsResize: true,
+    stickyHeader: false,
+    data:
+        [
+            ['Kia Rio', 96689, 87662, '+10%'],
+            ['Лада Гранта', 93686, 87726, '+7%'],
+            ['Лада Веста', 77291, 55174, '+40%'],
+            ['Лада 4х4', 29091, 27274, '+7%'],
+            ['Toyota Camry', 28199, 28063, '0%'],
+            ['Volkswagen Tiguan', 27666, 10660, '+160%']],
+    header: ['Модель', '2017 год, шт.', '2016 год, шт.', 'Динамика']
+});
+    </pre>
+    <div class="example2"></div>
+    <h3>with sticky header, resizable cols</h3>
+    <pre>
+new BomTable({
+    tableClass: 'ex-tbl',
+    container: '.example3',
+    colsResize: true,
+    data:
+        [
+            ['Kia Rio', 96689, 87662, '+10%'],
+            ['Лада Гранта', 93686, 87726, '+7%'],
+            ['Лада Веста', 77291, 55174, '+40%'],
+            ['Hyundai Solaris', 68614, 90380, '–24%'],
+            ['Hyundai Creta', 55305, 21929, '—'],
+            ['Volkswagen Polo', 48595, 47702, '+2%'],
+            ['Renault Duster', 43828, 44001, '0%'],
+            ['Лада Ларгус', 33601, 29341, '+15%'],
+            ['Лада XRAY', 33319, 19943, '—'],
+            ['Toyota RAV4', 32931, 30603, '+8%'],
+            ['Chevrolet Niva', 31212, 29844, '+5%'],
+            ['Renault Kaptur', 30966, 13926, '—'],
+            ['Renault Logan', 30640, 29565, '+4%'],
+            ['Renault Sandero', 30210, 28557, '+6%'],
+            ['Skoda Rapid', 29445, 25931, '+14%'],
+            ['Лада 4х4', 29091, 27274, '+7%'],
+            ['Toyota Camry', 28199, 28063, '0%'],
+            ['Volkswagen Tiguan', 27666, 106, '+160%']
+        ],
+    header: ['Модель', '2017 год, шт.', '2016 год, шт.', 'Динамика']
+});
+    </pre>
+    <div class="example3"></div>
 </div>
-<script type="text/javascript" src="bomtable.min.js?v=2.2.5"></script>
+<script type="text/javascript" src="bomtable.min.js?v=2.3.1"></script>
 <script>
     {
         new BomTable({
             tableClass: 'ex-tbl',
             container: '.example1',
+            stickyHeader: false,
+            data:
+                [['Kia Rio', 96689, 87662, '+10%'],
+                    ['Лада Гранта', 93686, 87726, '+7%'],
+                    ['Лада Веста', 77291, 55174, '+40%'],
+                    ['Hyundai Solaris', 68614, 90380, '–24%'],
+                    ['Hyundai Creta', 55305, 21929, '—'],
+                ],
+        });
+    }
+    {
+        new BomTable({
+            tableClass: 'ex-tbl',
+            container: '.example2',
+            colsResize: true,
+            stickyHeader: false,
+            data:
+                [['Kia Rio', 96689, 87662, '+10%'],
+                    ['Лада Гранта', 93686, 87726, '+7%'],
+                    ['Лада Веста', 77291, 55174, '+40%'],
+                    ['Лада 4х4', 29091, 27274, '+7%'],
+                    ['Toyota Camry', 28199, 28063, '0%'],
+                    ['Volkswagen Tiguan', 27666, 10660, '+160%']],
+            header: ['Модель', '2017 год, шт.', '2016 год, шт.', 'Динамика']
+        });
+    }
+
+    {
+        new BomTable({
+            tableClass: 'ex-tbl',
+            container: '.example3',
             colsResize: true,
             data:
                 [['Kia Rio', 96689, 87662, '+10%'],
@@ -71,10 +167,9 @@
                     ['Лада 4х4', 29091, 27274, '+7%'],
                     ['Toyota Camry', 28199, 28063, '0%'],
                     ['Volkswagen Tiguan', 27666, 10660, '+160%']],
-            header: ['Модель', '2017 год, шт.', '2016 год, шт.', 'Динамика']
+            header: ['Модель', '2017 год, шт.', '2016 год, шт.', 'Динамика']
         });
     }
-
 </script>
 </body>
 </html>
